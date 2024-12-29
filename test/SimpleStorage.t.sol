@@ -13,7 +13,7 @@ contract SimpleStorageTest is Test {
     event NumberUpdated(uint256 oldNumber, uint256 newNumber);
 
     function setUp() public {
-        owner =  address(this);
+        owner = address(this);
         newOwner = address(0xBEEF);
         initialNumber = 10;
         simpleStorage = new SimpleStorage(initialNumber);
@@ -59,7 +59,7 @@ contract SimpleStorageTest is Test {
         assertEq(simpleStorage.getNumber(), newNumber);
     }
 
-    function test_Deployment() public view{
+    function test_Deployment() public view {
         assertTrue(address(simpleStorage) != address(0), "Contract not deployed");
         assertEq(simpleStorage.getNumber(), initialNumber, "Initial number not set correctly");
         assertEq(simpleStorage.owner(), owner, "Owner not set correctly");
